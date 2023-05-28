@@ -20,9 +20,9 @@ export class UploadComponent implements OnInit {
     Object.values(fileInput).forEach((file: any) => {
       let AWSService = window.AWS;
       console.log(AWSService)
-      AWSService.config.accessKeyId = 'AKIAZL4B26JXZUFAOLG7';
-      AWSService.config.secretAccessKey = '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';
-      let bucket = new AWSService.S3({params: {Bucket: 'uploadertoawss3'}});
+      AWSService.config.accessKeyId = '';
+      AWSService.config.secretAccessKey = '';
+      let bucket = new AWSService.S3({params: {Bucket: 'bucketname'}});
       let params = {Key: file.name, Body: file};
       bucket.upload(params, function(error: any, res: any) {
       console.log('error', error);
